@@ -18,8 +18,8 @@ class Trip:
 
         if isinstance(visitor, Visitor):
             self._visitor = visitor
-        else:
-            raise Exception
+        # else:
+        #     raise Exception
 
     @property
     def national_park(self):
@@ -31,5 +31,5 @@ class Trip:
 
         if isinstance(national_park, NationalPark):
             self._national_park = national_park
-        else:
-            raise Exception
+        # else:
+        #     raise Exception

@@ -121,3 +121,16 @@ build out any helper methods if needed.
   - Returns the total number of times that park has been visited
 - `NationalPark best_visitor()`
   - Returns the Visitor who has visited the park the most
+
+### Bonus: Aggregate and Association Method
+
+- `NationalPark classmethod most_visited()`
+  - returns the `NationalPark` instance that has received the most trips.
+  - _hint: will need a way to remember all NationalPark objects_
+  - _hint: do you have a way to get the total visits to a park?_
+  - Uncomment lines 110-121 in the national_park_test file to run the test
+
+### Bonus: For any invalid inputs, raise an `Exception`.
+
+- If using pytest, you will need to go through the test files.
+- Follow the instructions in those files for commenting and uncommenting lines.

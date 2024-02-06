@@ -16,8 +16,8 @@ class NationalPark:
     def name(self, name):
         if isinstance(name, str) and not hasattr(self, "name"):
             self._name = name
-        else:
-            raise Exception
+        # else:
+        #     raise Exception
 
     def trips(self):
         return [trip for trip in Trip.all if trip.national_park == self]
