@@ -55,8 +55,6 @@ comments describing your progress.
 Write the following methods in the classes in the files provided. Feel free to
 build out any helper methods if needed.
 
-_Carefully consider where to create your Single Source of Truth._
-
 ### Initializers and Properties
 
 #### Visitor
@@ -64,7 +62,7 @@ _Carefully consider where to create your Single Source of Truth._
 - `Visitor __init__(self, name)`
   - Visitor should be initialized with a name
 - `Visitor property name`
-  - Should return the visitor's name
+  - Return name
   - Names must be of type `str`
   - Names must be between 1 and 15 characters, inclusive
   - `raise Exception` if setter fails
@@ -74,8 +72,8 @@ _Carefully consider where to create your Single Source of Truth._
 - `NationalPark __init__(self, name)`
   - national_parks should be initialized with a name, as a string
 - `NationalPark property name`
-  - Returns a given national_park's name
-  - Should not be able to change after the national_park is created
+  - Returns the NationalPark's name
+  - Should not be able to change after the NationalPark is created
   - `raise Exception` if setter fails
   - _hint: hasattr()_
 
@@ -99,19 +97,19 @@ _Carefully consider where to create your Single Source of Truth._
 
 #### Visitors
 
-- `Visitor trips(self)`
+- `Visitor trips()`
   - Returns a list of all trips for that visitor
   - The list of trips must contain type `Trip`
-- `Visitor national_parks(self)`
-  - Returns a **unique** list of all parks which that visitor has visited.
+- `Visitor national_parks()`
+  - Returns a **unique** list of all parks who that visitor has visited.
   - The list of national parks must contain type `NationalPark` 
 
 #### NationalPark
 
-- `NationalPark trips(self)`
+- `NationalPark trips()`
   - Returns a list of all trips planned for this national park
   - The list of trips must contain type `trip`
-- `NationalPark visitors(self)`
+- `NationalPark visitors()`
   - Returns a **unique** list of all visitors a national park has recieved
   - The list of visitors must contain type `Visitor`
 
@@ -119,9 +117,20 @@ _Carefully consider where to create your Single Source of Truth._
 
 #### National Park
 
-- `NationalPark total_visits(self)`
+- `NationalPark total_visits()`
   - Returns the total number of times that park has been visited
-- `NationalPark best_visitor(self)`
+- `NationalPark best_visitor()`
   - Returns the Visitor who has visited the park the most
-- `NationalPark classmethod most_visited(cls)`
-  - Returns the national_park which has received the most visits
+
+### Bonus: Aggregate and Association Method
+
+- `NationalPark classmethod most_visited()`
+  - returns the `NationalPark` instance that has received the most trips.
+  - _hint: will need a way to remember all NationalPark objects_
+  - _hint: do you have a way to get the total visits to a park?_
+  - Uncomment lines 110-121 in the national_park_test file to run the test
+
+### Bonus: For any invalid inputs, raise an `Exception`.
+
+- If using pytest, you will need to go through the test files.
+- Follow the instructions in those files for commenting and uncommenting lines.
